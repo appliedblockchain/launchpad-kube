@@ -1,0 +1,12 @@
+desc "deploy"
+task :deploy do
+  sh "kubectl apply -f  ./"
+end
+
+desc "test"
+task :test do
+  sh "kubectl get pods"
+  sh "curl http://xxxx/"
+end
+
+task default: :deploy
