@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  api:
+    image: appliedblockchain/launchpad-api:latest
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+      args:
+        - NPM_TOKEN

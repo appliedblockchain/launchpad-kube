@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  react:
+    image: appliedblockchain/launchpad-react:latest
+    build:
+      context: .
+      dockerfile: ./react/Dockerfile
+      args:
+        - NPM_TOKEN

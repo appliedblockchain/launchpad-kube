@@ -3,6 +3,15 @@ task :deploy do
   sh "kubectl apply -f  ./"
 end
 
+CONTAINERS = %w(api react)
+
+desc "build all containers via compose"
+task :build_all do
+  # loop trough all containers
+  sh "cd ../api && docker-compose -f api/docker-compose.yml build"
+  sh "docker-compose -f ../react/docker-compose.yml build"
+end
+
 desc "test"
 task :test do
   sh "kubectl get pods"
